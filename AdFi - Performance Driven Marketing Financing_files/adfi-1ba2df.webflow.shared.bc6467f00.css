@@ -8122,6 +8122,18 @@ img {
   display: flex;
 }
 
+.container-footer-legal .site-by {
+  margin-left: auto;  /* pushes it to the right side */
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.container-footer-legal .site-by a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .text_footer-slogan {
   color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---core-color-tint--neutral-inverse-a70);
   width: 64%;
@@ -9513,6 +9525,13 @@ img {
     align-items: flex-start;
     padding: 1.5rem 1rem;
   }
+
+  .container-footer-legal .site-by {
+  margin-left:inherit;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
 
   .container_point {
     left: -90px;
