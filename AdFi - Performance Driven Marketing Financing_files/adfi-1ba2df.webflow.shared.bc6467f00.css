@@ -8943,6 +8943,10 @@ img {
     padding-right: 1rem;
   }
 
+  .button.contact{
+    height: 50px;
+  }
+
   .nav-menu-2 {
     background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---core-neutral-color--neutral-secondary);
     height: 100vh;
