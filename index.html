@@ -2,7 +2,7 @@
 <!-- saved from url=(0031)https://adfi-1ba2df.webflow.io/ -->
 <html data-wf-domain="adfi-1ba2df.webflow.io" data-wf-page="68c86086a76a3466d8409ce0"
   data-wf-site="682e4d6e2c13f9dd99e88f69"
-  class="w-mod-js w-mod-ix wf-instrumentsans-n4-active wf-inter-n4-active wf-inter-n7-active wf-inter-n9-active wf-inter-n5-active wf-active">
+  class="w-mod-js w-mod-ix wf-instrumentsans-n4-active wf-inter-n4-active wf-inter-n7-active wf-inter-n9-active wf-inter-n5-active wf-active" style="scroll-behavior: smooth;">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -268,6 +268,20 @@ a,
       .icon-faq.rotated {
         transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg) !important;
       }
+
+      .container-answer {
+        transition: height 0.3s ease;
+        overflow: hidden;
+        height: 0;
+      }
+
+      .container-answer.open {
+        height: auto;
+      }
+
+      #hero {
+        scroll-margin-top: 80px;
+      }
     </style>
   </div>
   <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium"
@@ -308,7 +322,7 @@ a,
     </div>
     <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
   </div>
-  <section class="padding-global" id="#hero">
+  <section id="hero" class="padding-global">
     <div class="container-hero">
       <div class="container_hero-text">
         <h1 class="h1-heading">Performance-driven financing for digital advertising</h1>
@@ -619,7 +633,8 @@ a,
   <section id="why" class="padding-global footer">
     <div class="container-footer">
       <div class="container-footer-top">
-        <div class="container-footer-left"><a href="#hero"><img
+        <div class="container-footer-left">
+          <a href="#hero"><img
               src="./AdFi - Performance Driven Marketing Financing_files/68ca1249e54962b1664f6432_Column.svg"
               loading="lazy" alt="AdFi Logo. Purple box around the word ad. " class="image-4"></a>
           <p class="text_footer-slogan">AdFi - Trusted partner for fast growing consumer brands, founders and investors
@@ -709,14 +724,11 @@ a,
       $(document).on('click', '.faq-question', function () {
         var $answer = $(this).next('.container-answer');
         var $icon = $(this).find('.icon-faq');
-        if ($answer.height() > 0) {
-          $answer.animate({ height: 0 }, 300);
+        if ($answer.hasClass('open')) {
+          $answer.removeClass('open');
           $icon.removeClass('rotated');
         } else {
-          var autoHeight = $answer.css('height', 'auto').height();
-          $answer.height(0).animate({ height: autoHeight }, 300, function () {
-            $answer.css('height', 'auto');
-          });
+          $answer.addClass('open');
           $icon.addClass('rotated');
         }
       });
