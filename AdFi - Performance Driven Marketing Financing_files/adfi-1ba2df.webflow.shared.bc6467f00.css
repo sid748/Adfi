@@ -294,7 +294,7 @@ pre.w-code-block code {
   display: contents;
 }
 
-.w-webflow-badge, .w-webflow-badge > img {
+/* .w-webflow-badge, .w-webflow-badge > img {
   box-sizing: unset;
   width: unset;
   height: unset;
@@ -342,9 +342,9 @@ pre.w-code-block code {
   word-spacing: unset;
   word-wrap: unset;
   transition: unset;
-}
+} */
 
-.w-webflow-badge {
+/* .w-webflow-badge {
   white-space: nowrap;
   cursor: pointer;
   box-shadow: 0 0 0 1px #0000001a, 0 1px 3px #0000001a;
@@ -374,7 +374,7 @@ pre.w-code-block code {
   opacity: 1 !important;
   vertical-align: middle !important;
   display: inline-block !important;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
@@ -8638,7 +8638,7 @@ img {
     align-items: center;
     height: auto;
     padding-left: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 2rem;
   }
 
