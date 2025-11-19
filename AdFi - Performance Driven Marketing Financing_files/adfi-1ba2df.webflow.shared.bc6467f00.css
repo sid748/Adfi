@@ -8523,6 +8523,9 @@ img {
 }
 
 @media screen and (max-width: 991px) {
+  body{
+    overflow-x: hidden !important;
+  }
   .container.small-container {
     width: 90%;
   }
@@ -8819,7 +8822,7 @@ img {
   }
 
   .nav-link {
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     height: auto;
     padding-left: 1.5rem;
