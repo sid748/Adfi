@@ -6,6 +6,8 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden !important;
+
 }
 
 article,
@@ -2950,7 +2952,7 @@ textarea.w-select {
 .button:hover {
   border-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---button--button-primary-border-hover);
   background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---core-accent-color--accent-primary-hover);
- background: linear-gradient(130deg, #0C75E6, #88b2dd) !important;
+  background: linear-gradient(130deg, #0C75E6, #88b2dd) !important;
   box-shadow: none;
   color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---button--button-primary-text);
   color: #ffffff !important;
@@ -3175,15 +3177,14 @@ textarea.w-select {
 
 .button.secondary {
   border: 1px solid var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---core-color-tint--neutral-primary-a30);
-  color:#000000 !important;
+  color: #000000 !important;
   background-color: #fff;
   background: #ffffff !important;
 }
 
 .button.secondary:hover {
   /* background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---core-neutral-color--neutral-primary); */
-  color:#000000
-   background-color: #fff;
+  color: #000000 background-color: #fff;
   background: #ffffff !important;
 }
 
@@ -3245,7 +3246,8 @@ textarea.w-select {
 }
 
 .input:focus {
-  outline-color: #00EE6E; /* Best matching solid color */
+  outline-color: #00EE6E;
+  /* Best matching solid color */
   background: linear-gradient(90deg, #00EE6E, #0C75E6);
   color: #ffffff !important;
   -webkit-background-clip: text;
@@ -4850,7 +4852,7 @@ textarea.w-select {
 
 .utility-text-accent-primary {
   /* color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---core-accent-color--accent-primary); */
-  color:#0c75e6 !important;
+  color: #0c75e6 !important;
   /* background: linear-gradient(120deg, #00EE6E, #0C75E6); */
   -webkit-background-clip: text;
   color: transparent;
@@ -8175,8 +8177,8 @@ img {
   grid-row-gap: 1.5rem;
   border-style: none none solid;
   border-width: 1px;
-  border-color:#0000001a !important;
-   /* border-left: 1px solid #0000001a;
+  border-color: #0000001a !important;
+  /* border-left: 1px solid #0000001a;
     border-right: 1px solid #0000001a; */
   flex-flow: column;
   flex: none;
@@ -8198,7 +8200,7 @@ img {
 
 .submit-button-2 {
   background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---button--button-primary-bg);
-  background: linear-gradient(130deg, #0C75E6,#70a6dc );
+  background: linear-gradient(130deg, #0C75E6, #70a6dc);
   flex: 0 auto;
   color: #ffffff;
   align-self: flex-start;
@@ -8212,7 +8214,7 @@ img {
 
 .submit-button-2:hover {
   background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---button--button-primary-bg-hover);
-  background: linear-gradient(130deg, #0C75E6,#70a6dc );
+  background: linear-gradient(130deg, #0C75E6, #70a6dc);
   color: #ffffff;
 
 }
@@ -8221,7 +8223,7 @@ img {
   max-width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---container--container-width);
   border-style: none solid;
   border-width: 1px;
-  border-color:#0000001a;
+  border-color: #0000001a;
   /* border: 1px solid #0000001a; */
   flex-flow: column;
   min-height: 400px;
@@ -8234,7 +8236,7 @@ img {
   max-width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1747864945348---container--container-width);
   border-style: none solid;
   border-width: 1px;
-  border-color:#0000001a;
+  border-color: #0000001a;
   flex-flow: row;
   min-height: 400px;
   margin-left: auto;
@@ -8317,12 +8319,12 @@ img {
 }
 
 .text_footer-slogan {
-  color:#fff;
+  color: #fff;
   width: 64%;
 }
 
 .text-copyright {
-  color:#fff;
+  color: #fff;
   margin-bottom: 0;
 }
 
@@ -8523,9 +8525,7 @@ img {
 }
 
 @media screen and (max-width: 991px) {
-  body{
-    overflow-x: hidden !important;
-  }
+
   .container.small-container {
     width: 90%;
   }
@@ -8822,7 +8822,7 @@ img {
   }
 
   .nav-link {
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     height: auto;
     padding-left: 1.5rem;
@@ -9135,7 +9135,7 @@ img {
 
   .button.contact {
     height: 50px;
-    width:90%;
+    width: 90%;
   }
 
   .nav-menu-2 {

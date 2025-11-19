@@ -1,18 +1,12 @@
-# TODO List for Footer Logo Smooth Scroll and FAQ Performance Fix
+# TODO: Replace AOS with GSAP Animations in index.html
 
-- [x] Add smooth scrolling CSS to html element
-- [x] Update FAQ accordion JavaScript to use CSS transitions instead of jQuery animate
-- [x] Test changes locally
-- [x] Test changes on GitHub server
-
-# TODO List for Adding AOS Animations
-
-- [x] Add AOS library CDN links to head
-- [x] Initialize AOS in script section
-- [x] Add data-aos attributes to hero section elements
-- [x] Add data-aos attributes to how it works section elements
-- [x] Add data-aos attributes to why AdFi section elements
-- [x] Add data-aos attributes to eligibility section elements
-- [x] Add data-aos attributes to FAQ section elements
-- [x] Add data-aos attributes to contact section elements
-- [x] Test animations locally
+## Steps to Complete
+- [x] Include GSAP library and ScrollTrigger plugin in index.html
+- [x] Identify elements that need animations (fade-up, fade-left, fade-right with delays)
+- [x] Write GSAP ScrollTrigger animations for hero section
+- [x] Write GSAP ScrollTrigger animations for "How it works" section
+- [x] Write GSAP ScrollTrigger animations for "Why choose AdFi" section
+- [x] Write GSAP ScrollTrigger animations for "Eligibility" section
+- [x] Write GSAP ScrollTrigger animations for "FAQ" section
+- [x] Write GSAP ScrollTrigger animations for "Contact" section
+- [x] Test animations in browser
