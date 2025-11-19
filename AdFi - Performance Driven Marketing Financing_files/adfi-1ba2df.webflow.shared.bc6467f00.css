@@ -9167,7 +9167,7 @@ img {
   }
 
   .image-5 {
-    flex: none;
+    /* flex: none; */
     max-width: none;
     margin-left: auto;
     margin-right: auto;
