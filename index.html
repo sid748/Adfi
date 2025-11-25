@@ -291,7 +291,7 @@ a,
     </style>
   </div>
   <!-- ==============================================header section starts her================================================== -->
-  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium"
+  <div data-animation="over-right" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium"
     role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
     <div class="nav-container w-container">
       <div class="nav-left"><a href="index.html" aria-current="page" class="brand w-nav-brand w--current"
@@ -322,9 +322,11 @@ a,
       </nav>
       <div class="menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button"
         tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
-        <div class="div-block-3"><img
-            src="./AdFi - Performance Driven Marketing Financing_files/68cd8fd679deb506340af0fc_Menu.svg" loading="lazy"
-            width="20" alt="Menu icon (hamburger) " class="image-5"></div>
+        <div class="hamburger-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
     </div>
     <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
@@ -346,8 +348,7 @@ a,
               it works</strong></a></div>
       </div>
       <div class="container-hero-visual overflow-x-hidden"><img
-          src="AdFi - Performance Driven Marketing Financing_files/new-hero.avif"
-          loading="lazy" width="346"
+          src="AdFi - Performance Driven Marketing Financing_files/new-hero.avif" loading="lazy" width="346"
           alt="Graphic representing how AdFi supports continuous loop of funding, marketing and performance"
           class="image-hero"></div>
     </div>
@@ -616,7 +617,7 @@ a,
     <div class="container-contact overflow-x-hidden">
       <div class="container_contact-left overflow-x-hidden">
         <div class="title-subtitle">
-          <div class="heading-mini utility-text-inverse overflow-x-hidden"  style=color:#ffffff;>Get in touch</div>
+          <div class="heading-mini utility-text-inverse overflow-x-hidden" style=color:#ffffff;>Get in touch</div>
           <h1 class="h2-heading utility-text-inverse-secondary overflow-x-hidden">Ready to Amplify
             Your Marketing Dollars?</h1>
         </div>
@@ -742,6 +743,8 @@ a,
       $(document).on('click', '.w-nav-button', function () {
         $('.w-nav-menu').toggleClass('w--open');
         $('.w-nav-overlay').toggleClass('w--open');
+        // Toggle hamburger icon open state
+        $(this).toggleClass('w--open');
       });
       // FAQ Accordion functionality
       $(document).on('click', '.faq-question', function () {
@@ -1146,7 +1149,17 @@ a,
     });
 
 
+
   </script>
+
+  <!-- Add GSAP and ScrollTrigger CDN scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-dqsxSuRm7DRTxXknIDv7ZjchiiR8uU/sxkoySYfR2pWnhWxaL6W3/0C7ce4y1D+ZhvaKM6uB+Xey1P9fXmuNcg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-+9/W+6rMWNwt0ZJx1DYZeo56J6UBS2rkDz1REYPepuRk7jJhvS+i5+Q3v0yso0GS7aayjeeu4oTThi4664VvRQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 
 </html>

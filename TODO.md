@@ -1,24 +1,31 @@
-# TODO - Add Entry Animations Using GSAP ScrollTrigger
+# TODO - Hamburger and Menu Drawer Animation Enhancements
 
-## Objective
-Add or enhance entry animations on page sections using GSAP ScrollTrigger, without using AOS library.
+## Status
+- [x] Plan approved by user.
+- Current progress: Starting CSS edits.
 
-## Background
-- The project already uses GSAP and ScrollTrigger plugin
-- Existing animations target many sections and elements with fade, translate and delay effects
-- We will use consistent styles and add animations for any missing or less animated sections
+## Detailed Steps (Updated)
 
-## Plan
-- Modify index.html:
-  - Locate the existing GSAP animation script block
-  - Add ScrollTrigger animations for any main section or elements missing animations
-  - Examples:
-    - Use gsap.from() with opacity 0 and y or x translations (e.g. y: 50)
-    - Trigger animations when elements come into viewport (start: 'top 80%')
-    - Use stagger or delay between child elements for smooth effect
-  - Ensure animations are smooth, performant and non-intrusive.
+### 1. Edit index.html [x DONE]
+- [x] data-animation="over-right" already set on .navbar.w-nav.
+- [x] Hamburger already CSS spans (.hamburger-icon > 3x .bar).
 
-## Next Steps
-- Edit index.html, add GSAP entry animations to designated sections
-- Test animations on scroll in a browser to verify smooth entry effects
-- Adjust duration, delay and easing as necessary
+### 2. Edit CSS (AdFi - Performance Driven Marketing Financing_files/adfi-1ba2df.webflow.shared.bc6467f00.css) [ ]
+- [ ] Add base .hamburger-icon & .bar styles (position, size, transition).
+- [ ] Add .menu-button.w--open transforms: bars to cross (rotate45, opacity0, rotate-45).
+- [ ] Enhance .nav-menu-2.w--open: smooth right slide if needed (Webflow base).
+- [ ] Add .nav-menu-2.w--open .nav-menu-list-item: staggered slideInLeft anim (@keyframes translateX(-30px) scale + opacity, nth-child delay 0.1s).
+- [ ] @media (max-width: 991px) scope.
+
+### 3. Edit JS [x NOT NEEDED]
+- [x] Existing jQuery toggle .w--open perfect, closes on links.
+
+### 4. Testing [ ]
+- [ ] Launch browser, mobile view, toggle hamburger: check cross anim.
+- [ ] Check menu slides right.
+- [ ] Check items slide left fancy/stagger.
+- [ ] Close on link click.
+- [ ] Tune if issues.
+
+### Next
+- Update this TODO after each step.
