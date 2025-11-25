@@ -2050,9 +2050,9 @@ textarea.w-select {
     display: none;
   }
 
-  .w-nav[data-collapse="medium"] .w-nav-button {
+  /* .w-nav[data-collapse="medium"] .w-nav-button {
     display: block;
-  }
+  } */
 }
 
 @media screen and (max-width: 767px) {

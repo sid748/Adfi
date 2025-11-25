@@ -31,6 +31,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="./AdFi - Performance Driven Marketing Financing_files/adfi-1ba2df.webflow.shared.bc6467f00.css"
     rel="stylesheet" type="text/css">
+  <link href="hamburger-fix.css" rel="stylesheet" type="text/css">
   <style>
     @media (min-width:992px) {
       html.w-mod-js:not(.w-mod-ix) [data-w-id="61b5a00b-52ab-75e8-d705-0531b21e5881"] {
@@ -714,6 +715,12 @@ a,
     type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('set', 'developer_id.dZGVlNj', true); gtag('config', 'G-P3LEEDP9SL');</script>
   <!-- Add this line to include jQuery from a CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-dqsxSuRm7DRTxXknIDv7ZjchiiR8uU/sxkoySYfR2pWnhWxaL6W3/0C7ce4y1D+ZhvaKM6uB+Xey1P9fXmuNcg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-+9/W+6rMWNwt0ZJx1DYZeo56J6UBS2rkDz1REYPepuRk7jJhvS+i5+Q3v0yso0GS7aayjeeu4oTThi4664VvRQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
     // This script now runs after jQuery has been loaded
@@ -741,10 +748,25 @@ a,
       bindNavMenu();
       // Toggle mobile menu on button click
       $(document).on('click', '.w-nav-button', function () {
-        $('.w-nav-menu').toggleClass('w--open');
-        $('.w-nav-overlay').toggleClass('w--open');
-        // Toggle hamburger icon open state
-        $(this).toggleClass('w--open');
+        const menu = $('.w-nav-menu');
+        const overlay = $('.w-nav-overlay');
+        const button = $(this);
+
+        if (menu.hasClass('w--open')) {
+          console.log('Closing menu');
+          // Start close animation
+          menu.removeClass('w--open');
+          overlay.removeClass('w--open');
+          button.removeClass('w--open');
+          console.log('Menu open class removed');
+        } else {
+          console.log('Opening menu');
+          // Open the menu
+          menu.addClass('w--open');
+          overlay.addClass('w--open');
+          button.addClass('w--open');
+          console.log('Menu open class added');
+        }
       });
       // FAQ Accordion functionality
       $(document).on('click', '.faq-question', function () {
@@ -1150,16 +1172,447 @@ a,
 
 
 
+
+  
+    function bindNavMenu() {
+      if (window.matchMedia("(max-width: 991px)").matches) {
+        // attach click handler to close menu when link is clicked
+        $('.w-nav-menu').off('click.nav').on('click.nav', 'a', function () {
+          $('.w-nav-menu').removeClass('w--open');
+          $('.w-nav-overlay').removeClass('w--open');
+        });
+      } else {
+        // remove handler when screen is larger
+        $('.w-nav-menu').off('click.nav');
+      }
+    }
+
+    $(document).ready(function () {
+      bindNavMenu();
+      // Toggle mobile menu on button click
+      $(document).on('click', '.w-nav-button', function () {
+        const menu = $('.w-nav-menu');
+        const overlay = $('.w-nav-overlay');
+        const button = $(this);
+
+        if (menu.hasClass('w--open')) {
+          console.log('Closing menu');
+          // Start close animation
+          menu.removeClass('w--open');
+          overlay.removeClass('w--open');
+          button.removeClass('w--open');
+          console.log('Menu open class removed');
+        } else {
+          console.log('Opening menu');
+          // Open the menu
+          menu.addClass('w--open');
+          overlay.addClass('w--open');
+          button.addClass('w--open');
+          console.log('Menu open class added');
+        }
+      });
+      // FAQ Accordion functionality
+      $(document).on('click', '.faq-question', function () {
+        var $answer = $(this).next('.container-answer');
+        var $icon = $(this).find('.icon-faq');
+
+        // Close all other open FAQs
+        $('.container-answer.open').not($answer).removeClass('open');
+        $('.icon-faq.rotated').not($icon).removeClass('rotated');
+
+        // Toggle the clicked one
+        if ($answer.hasClass('open')) {
+          $answer.removeClass('open');
+          $icon.removeClass('rotated');
+        } else {
+          $answer.addClass('open');
+          $icon.addClass('rotated');
+        }
+      });
+    });
+    $(window).on('resize', bindNavMenu);
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Animations
+    gsap.from('.container_hero-text .h1-heading', {
+      scrollTrigger: {
+        trigger: '.container_hero-text',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_hero-text .p-hero', {
+      scrollTrigger: {
+        trigger: '.container_hero-text',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.1,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container-button-group', {
+      scrollTrigger: {
+        trigger: '.container-button-group',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container-hero-visual', {
+      scrollTrigger: {
+        trigger: '.container-hero-visual',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      },
+      x: 50,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.3,
+      ease: 'power2.out'
+    });
+
+    // How it works section
+    gsap.from('.container_how-intro .heading-mini', {
+      scrollTrigger: {
+        trigger: '.container_how-intro',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_how-intro .h2-heading', {
+      scrollTrigger: {
+        trigger: '.container_how-intro',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.1,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_how-intro .p-hero', {
+      scrollTrigger: {
+        trigger: '.container_how-intro',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+
+    // How it works steps
+    gsap.utils.toArray('.container-how-step').forEach((step, index) => {
+      gsap.from(step, {
+        scrollTrigger: {
+          trigger: step,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: 'power2.out'
+      });
+    });
+
+    // Why choose AdFi section
+    gsap.from('.container_why-left .heading-mini', {
+      scrollTrigger: {
+        trigger: '.container_why-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_why-left .h2-heading', {
+      scrollTrigger: {
+        trigger: '.container_why-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.1,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_why-left .image-why', {
+      scrollTrigger: {
+        trigger: '.container_why-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      x: -50,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+
+    gsap.utils.toArray('.container_why-right .container-reason').forEach((reason, index) => {
+      gsap.from(reason, {
+        scrollTrigger: {
+          trigger: reason,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.4,
+        delay: index * 0.1,
+        ease: 'power2.out'
+      });
+    });
+
+    // Eligibility section
+    gsap.from('.container-eligibility-left .heading-mini', {
+      scrollTrigger: {
+        trigger: '.container-eligibility-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container-eligibility-left .h2-heading', {
+      scrollTrigger: {
+        trigger: '.container-eligibility-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.1,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container-eligibility-left .p-hero', {
+      scrollTrigger: {
+        trigger: '.container-eligibility-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+
+    gsap.utils.toArray('.container_requirements .container-reason').forEach((req, index) => {
+      gsap.from(req, {
+        scrollTrigger: {
+          trigger: req,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.4,
+        delay: index * 0.1,
+        ease: 'power2.out'
+      });
+    });
+
+    gsap.from('.container-eligibility-right', {
+      scrollTrigger: {
+        trigger: '.container-eligibility-right',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      x: 50,
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+
+    // FAQ section
+    gsap.from('.container_faq-left .heading-mini', {
+      scrollTrigger: {
+        trigger: '.container_faq-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_faq-left .h2-heading', {
+      scrollTrigger: {
+        trigger: '.container_faq-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.1,
+      ease: 'power2.out'
+    });
+
+    gsap.utils.toArray('.container_why-right .container-question').forEach((question, index) => {
+      gsap.from(question, {
+        scrollTrigger: {
+          trigger: question,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.4,
+        delay: index * 0.05,
+        ease: 'power2.out'
+      });
+    });
+
+    // Contact section
+    gsap.from('.container_contact-left .heading-mini', {
+      scrollTrigger: {
+        trigger: '.container_contact-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_contact-left .h2-heading', {
+      scrollTrigger: {
+        trigger: '.container_contact-left',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.1,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_contact-right .paragraph-lg', {
+      scrollTrigger: {
+        trigger: '.container_contact-right',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.container_contact-right .p-hero', {
+      scrollTrigger: {
+        trigger: '.container_contact-right',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.3,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.w-form', {
+      scrollTrigger: {
+        trigger: '.w-form',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.4,
+      ease: 'power2.out'
+    });
+
+    // Footer section animations
+    gsap.from('.container-footer-top', {
+      scrollTrigger: {
+        trigger: '.container-footer-top',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+
+    gsap.utils.toArray('.container-footer-links a').forEach((link, index) => {
+      gsap.from(link, {
+        scrollTrigger: {
+          trigger: link,
+          start: 'top 90%',
+          toggleActions: 'play none none reverse'
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.4,
+        delay: index * 0.1,
+        ease: 'power2.out'
+      });
+    });
+
+    gsap.from('.container-footer-legal', {
+      scrollTrigger: {
+        trigger: '.container-footer-legal',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.3,
+      ease: 'power2.out'
+    });
+
   </script>
-
-  <!-- Add GSAP and ScrollTrigger CDN scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-    integrity="sha512-dqsxSuRm7DRTxXknIDv7ZjchiiR8uU/sxkoySYfR2pWnhWxaL6W3/0C7ce4y1D+ZhvaKM6uB+Xey1P9fXmuNcg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-    integrity="sha512-+9/W+6rMWNwt0ZJx1DYZeo56J6UBS2rkDz1REYPepuRk7jJhvS+i5+Q3v0yso0GS7aayjeeu4oTThi4664VvRQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-</body>
 
 </html>
