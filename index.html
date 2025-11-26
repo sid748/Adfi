@@ -731,67 +731,6 @@ a,
   </script>
 
   <script>
-    function bindNavMenu() {
-      if (window.matchMedia("(max-width: 991px)").matches) {
-        // attach click handler to close menu when link is clicked
-        $('.w-nav-menu').off('click.nav').on('click.nav', 'a', function () {
-          $('.w-nav-menu').removeClass('w--open');
-          $('.w-nav-overlay').removeClass('w--open');
-        });
-      } else {
-        // remove handler when screen is larger
-        $('.w-nav-menu').off('click.nav');
-      }
-    }
-
-    $(document).ready(function () {
-      bindNavMenu();
-      // Toggle mobile menu on button click
-      $(document).on('click', '.w-nav-button', function () {
-        const menu = $('.w-nav-menu');
-        const overlay = $('.w-nav-overlay');
-        const button = $(this);
-
-        if (menu.hasClass('w--open')) {
-          console.log('Closing menu');
-          // Start close animation
-          menu.removeClass('w--open');
-          overlay.removeClass('w--open');
-          button.removeClass('w--open');
-          console.log('Menu open class removed');
-        } else {
-          console.log('Opening menu');
-          // Open the menu
-          menu.addClass('w--open');
-          overlay.addClass('w--open');
-          button.addClass('w--open');
-          console.log('Menu open class added');
-        }
-      });
-      // FAQ Accordion functionality
-      $(document).on('click', '.faq-question', function () {
-        var $answer = $(this).next('.container-answer');
-        var $icon = $(this).find('.icon-faq');
-
-        // Close all other open FAQs
-        $('.container-answer.open').not($answer).removeClass('open');
-        $('.icon-faq.rotated').not($icon).removeClass('rotated');
-
-        // Toggle the clicked one
-        if ($answer.hasClass('open')) {
-          $answer.removeClass('open');
-          $icon.removeClass('rotated');
-        } else {
-          $answer.addClass('open');
-          $icon.addClass('rotated');
-        }
-      });
-    });
-    $(window).on('resize', bindNavMenu);
-
-    // GSAP Animations
-    gsap.registerPlugin(ScrollTrigger);
-
     // Hero Section Animations
     gsap.from('.container_hero-text .h1-heading', {
       scrollTrigger: {
