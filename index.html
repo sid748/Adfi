@@ -824,26 +824,28 @@ a,
           // Toggle the clicked FAQ with GSAP animation
           if (answer.classList.contains('open')) {
             // Close animation
-            gsap.to(answer, {
-              duration: 0.3,
-              maxHeight: 0,
-              opacity: 0,
-              y: -15,
-              scaleY: 0,
-              ease: "power2.inOut",
-              onComplete: function() {
-                answer.classList.remove('open');
-              }
-            });
-            gsap.to(icon, {
-              duration: 0.3,
-              rotation: 0,
-              ease: "power2.inOut",
-              onComplete: function() {
-                icon.classList.remove('rotated');
-              }
-            });
-            console.log('Closed FAQ');
+            setTimeout(function() {
+              gsap.to(answer, {
+                duration: 0.3,
+                maxHeight: 0,
+                opacity: 0,
+                y: -15,
+                scaleY: 0,
+                ease: "power2.inOut",
+                onComplete: function() {
+                  answer.classList.remove('open');
+                }
+              });
+              gsap.to(icon, {
+                duration: 0.3,
+                rotation: 0,
+                ease: "power2.inOut",
+                onComplete: function() {
+                  icon.classList.remove('rotated');
+                }
+              });
+              console.log('Closed FAQ');
+            }, 250); // Further increased delay for noticeable closing experience
           } else {
             // Open animation
             setTimeout(function() {
@@ -873,7 +875,7 @@ a,
                 }
               });
               console.log('Opened FAQ');
-            }, 50); // Small delay to prevent conflicts
+            }, 70); // Small delay to prevent conflicts
           }
         }
       });
