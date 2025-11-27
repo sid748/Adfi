@@ -137,8 +137,17 @@
     pointer-events: auto !important;
   }
 
+  /* Ensure hamburger button is clickable */
+  .w-nav-button {
+    position: relative !important;
+    z-index: 10001 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
   .nav-link{
     border: none !important;
+    color: #000 !important; /* Ensure links are visible */
   }
 }
 
