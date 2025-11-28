@@ -38,5 +38,6 @@
 - Click nav links: menu should close and scroll to section.
 
 ## Next Steps
+- [x] Made CSS selectors more specific to override Webflow's default hiding behavior
 - Test the menu functionality in browser.
 - If issues persist, check console for JavaScript errors.

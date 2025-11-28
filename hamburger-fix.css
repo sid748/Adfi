@@ -34,14 +34,15 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Animate mobile menu drawer and overlay */
+  /* Animate mobile menu drawer and overlay */
   @media (max-width: 991px) {
-    .w-nav-menu {
+    .w-nav[data-collapse="medium"] .w-nav-menu {
       position: fixed !important;
       left: 0 !important;
       right: 0 !important;
+      top: 0 !important;
       bottom: 0 !important;
-      height: 90.5vh !important; /* Adjust height as needed */
+      height: 100vh !important;
       background-color: #fff !important;
       box-shadow: 0 -5px 15px rgb(0 0 0 / 0.1) !important;
       overflow-y: auto !important;
@@ -53,7 +54,7 @@
       align-items: center !important;
 
       /* Start off screen bottom */
-      transform: translateY(100%) !important;
+      transform: translateY(100vh) !important;
       opacity: 0 !important;
       transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out !important;
       pointer-events: none !important;
@@ -64,7 +65,7 @@
       box-sizing: border-box !important;
     }
 
-  .w-nav-menu.w--open {
+  .w-nav[data-collapse="medium"] .w-nav-menu.w--open {
     transform: translateY(0) !important;
     opacity: 1 !important;
     pointer-events: auto !important;
@@ -85,32 +86,32 @@
     width: 100% !important;
   }
 
-  .w-nav-menu.w--open .nav-menu-list-item {
+  .w-nav[data-collapse="medium"] .w-nav-menu.w--open .nav-menu-list-item {
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
 
   /* Stagger delay for nav items */
-  .w-nav-menu.w--open .nav-menu-list-item:nth-child(1) {
+  .w-nav[data-collapse="medium"] .w-nav-menu.w--open .nav-menu-list-item:nth-child(1) {
     transition-delay: 0.15s !important;
   }
 
-  .w-nav-menu.w--open .nav-menu-list-item:nth-child(2) {
+  .w-nav[data-collapse="medium"] .w-nav-menu.w--open .nav-menu-list-item:nth-child(2) {
     transition-delay: 0.3s !important;
   }
 
-  .w-nav-menu.w--open .nav-menu-list-item:nth-child(3) {
+  .w-nav[data-collapse="medium"] .w-nav-menu.w--open .nav-menu-list-item:nth-child(3) {
     transition-delay: 0.45s !important;
   }
 
-  .w-nav-menu.w--open .nav-menu-list-item:nth-child(4) {
+  .w-nav[data-collapse="medium"] .w-nav-menu.w--open .nav-menu-list-item:nth-child(4) {
     transition-delay: 0.6s !important;
   }
 
   /* Position hamburger button centered vertically within drawer area */
   /* .w-nav-button {
     position: fixed !important;
-    bottom: 150px !important; 
+    bottom: 150px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 10001 !important;
