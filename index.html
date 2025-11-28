@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0031)https://adfi-1ba2df.webflow.io/ -->
+<!-- saved from url=(0031)https://adfi-1ba2df.we
+ bflow.io/ -->
 <html data-wf-domain="adfi-1ba2df.webflow.io" data-wf-page="68c86086a76a3466d8409ce0"
   data-wf-site="682e4d6e2c13f9dd99e88f69"
   class="w-mod-js w-mod-ix wf-instrumentsans-n4-active wf-inter-n4-active wf-inter-n7-active wf-inter-n9-active wf-inter-n5-active wf-active"
@@ -69,9 +70,19 @@
   <script
     type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('set', 'developer_id.dZGVlNj', true); gtag('config', 'G-P3LEEDP9SL');</script>
   <script>
-    $("a[href^='#']").click(function () {
-      $(this).closest("nav").removeClass("w--open");
-      $(this).closest("div.w-dropdown-toggle").removeClass("w--open");
+    // Smooth scrolling for anchor links - vanilla JavaScript
+    document.querySelectorAll("a[href^='#']").forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Close any open nav menus
+        const nav = this.closest("nav");
+        if (nav) {
+          nav.classList.remove("w--open");
+        }
+        const dropdown = this.closest("div.w-dropdown-toggle");
+        if (dropdown) {
+          dropdown.classList.remove("w--open");
+        }
+      });
     });
   </script>
 </head>
@@ -278,6 +289,7 @@ a,
 
       .icon-faq {
         cursor: pointer;
+        transition: transform 0.4s ease;
       }
 
       .container-answer {
@@ -286,6 +298,7 @@ a,
         opacity: 0;
         transform: translateY(-15px) scaleY(0);
         transform-origin: top;
+        transition: max-height 0.8s ease, opacity 0.8s ease, transform 0.8s ease;
       }
 
       .container-answer.open {
@@ -530,8 +543,7 @@ a,
           <div class="faq-question">
             <h1 class="accordion-title">How is AdFi different from a traditional bank loan?</h1><img
               src="./AdFi - Performance Driven Marketing Financing_files/68c8955b497f18f55071489f_Plus.svg"
-              loading="lazy" alt="Plus Icon" class="icon-faq"
-              style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+              loading="lazy" alt="Plus Icon" class="icon-faq">
           </div>
           <div class="container-answer">
             <div class="container-faq-answer">
@@ -553,8 +565,7 @@ a,
           <div class="faq-question">
             <h1 class="accordion-title">What kind of companies does AdFi serve?</h1><img
               src="./AdFi - Performance Driven Marketing Financing_files/68c8955b497f18f55071489f_Plus.svg"
-              loading="lazy" alt="Plus Icon" class="icon-faq"
-              style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+              loading="lazy" alt="Plus Icon" class="icon-faq">
           </div>
           <div class="container-answer">
             <div class="container-faq-answer">
@@ -577,8 +588,7 @@ a,
           <div class="faq-question">
             <h1 class="accordion-title">How does your technology work?</h1><img
               src="./AdFi - Performance Driven Marketing Financing_files/68c8955b497f18f55071489f_Plus.svg"
-              loading="lazy" alt="Plus Icon" class="icon-faq"
-              style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+              loading="lazy" alt="Plus Icon" class="icon-faq">
           </div>
           <div class="container-answer">
             <div class="container-faq-answer">
@@ -604,10 +614,9 @@ a,
           <div class="faq-question">
             <h1 class="accordion-title">How will using AdFi help me avoid diluting my equity?</h1><img
               src="./AdFi - Performance Driven Marketing Financing_files/68c8955b497f18f55071489f_Plus.svg"
-              loading="lazy" alt="Plus Icon" class="icon-faq"
-              style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+              loading="lazy" alt="Plus Icon" class="icon-faq">
           </div>
-          <div class="container-answer" style="height: 0px;">
+          <div class="container-answer">
             <div class="container-faq-answer">
               <ul role="list" class="list spacer">
                 <li class="list-item">Every dollar you raise via equity dilutes your ownership. With AdFi, you raise
@@ -727,10 +736,19 @@ a,
   <script
     type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('set', 'developer_id.dZGVlNj', true); gtag('config', 'G-P3LEEDP9SL');</script>
   <script>
-    // This script now runs after jQuery has been loaded
-    $("a[href^='#']").click(function () {
-      $(this).closest("nav").removeClass("w--open");
-      $(this).closest("div.w-dropdown-toggle").removeClass("w--open");
+    // Smooth scrolling for anchor links - vanilla JavaScript (duplicate removed)
+    document.querySelectorAll("a[href^='#']").forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Close any open nav menus
+        const nav = this.closest("nav");
+        if (nav) {
+          nav.classList.remove("w--open");
+        }
+        const dropdown = this.closest("div.w-dropdown-toggle");
+        if (dropdown) {
+          dropdown.classList.remove("w--open");
+        }
+      });
     });
 
     function toggleMenu() {
@@ -754,102 +772,59 @@ a,
   </script>
 
   <script>
-    $(document).ready(function () {
+    document.addEventListener('DOMContentLoaded', function () {
       console.log('Document ready, binding menu button click');
       // Close menu when clicking on overlay
-      $(document).on('click', '.w-nav-overlay', function () {
-        console.log('Overlay clicked');
-        const menu = $('.w-nav-menu');
-        const overlay = $('.w-nav-overlay');
-        const button = $('.w-nav-button');
-
-        menu.removeClass('w--open');
-        overlay.removeClass('w--open');
-        button.removeClass('w--open');
-      });
-      // FAQ Accordion functionality using GSAP animations
       document.addEventListener('click', function(e) {
-        var target = e.target;
-        var questionContainer = target.closest('.container-question');
-        var iconClicked = target.closest('.icon-faq');
+        if (e.target.classList.contains('w-nav-overlay')) {
+          console.log('Overlay clicked');
+          const menu = document.querySelector('.w-nav-menu');
+          const overlay = document.querySelector('.w-nav-overlay');
+          const button = document.querySelector('.w-nav-button');
 
-        if (questionContainer || iconClicked) {
-          e.preventDefault();
-          console.log('FAQ clicked');
+          menu.classList.remove('w--open');
+          overlay.classList.remove('w--open');
+          button.classList.remove('w--open');
+        }
+      });
 
-          var question, answer, icon;
+      // FAQ Accordion functionality - vanilla JavaScript
+      function toggleFAQ(questionElement) {
+        const answer = questionElement.querySelector('.container-answer');
+        const icon = questionElement.querySelector('.icon-faq');
 
-          if (iconClicked) {
-            // Clicked on icon - find the parent container-question
-            question = iconClicked.closest('.container-question');
-            answer = question.querySelector('.container-answer');
-            icon = iconClicked;
-          } else {
-            // Clicked on container-question
-            question = questionContainer;
-            answer = question.querySelector('.container-answer');
-            icon = question.querySelector('.icon-faq');
-          }
-
-          console.log('Question:', question, 'Answer:', answer, 'Icon:', icon);
-
-          // Toggle the clicked FAQ with GSAP animation
+        if (answer && icon) {
           if (answer.classList.contains('open')) {
-            // Close animation
-            setTimeout(function() {
-              gsap.to(answer, {
-                duration: 0.3,
-                maxHeight: 0,
-                opacity: 0,
-                y: -15,
-                scaleY: 0,
-                ease: "power2.inOut",
-                onComplete: function() {
-                  answer.classList.remove('open');
-                }
-              });
-              gsap.to(icon, {
-                duration: 0.3,
-                rotation: 0,
-                ease: "power2.inOut",
-                onComplete: function() {
-                  icon.classList.remove('rotated');
-                }
-              });
-              console.log('Closed FAQ');
-            }, 250); // Further increased delay for noticeable closing experience
+            answer.classList.remove('open');
+            icon.classList.remove('rotated');
+            console.log('Closed FAQ');
           } else {
-            // Open animation
-            setTimeout(function() {
-              answer.classList.add('open');
-              gsap.fromTo(answer, {
-                maxHeight: 0,
-                opacity: 0,
-                y: -15,
-                scaleY: 0
-              }, {
-                duration: 0.6,
-                maxHeight: 2000,
-                opacity: 1,
-                y: 0,
-                scaleY: 1,
-                ease: "back.out(1.7)",
-                onComplete: function() {
-                  gsap.set(answer, { maxHeight: "none" });
-                }
-              });
-              gsap.to(icon, {
-                duration: 0.4,
-                rotation: 45,
-                ease: "back.out(1.7)",
-                onComplete: function() {
-                  icon.classList.add('rotated');
-                }
-              });
-              console.log('Opened FAQ');
-            }, 70); // Small delay to prevent conflicts
+            answer.classList.add('open');
+            icon.classList.add('rotated');
+            console.log('Opened FAQ');
           }
         }
+      }
+
+      // Add click handlers to all FAQ questions
+      document.querySelectorAll('.container-question').forEach(function(question) {
+        question.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('FAQ question clicked');
+          toggleFAQ(this);
+        });
+      });
+
+      // Add click handlers to all FAQ icons
+      document.querySelectorAll('.icon-faq').forEach(function(icon) {
+        icon.addEventListener('click', function(e) {
+          e.stopPropagation();
+          console.log('FAQ icon clicked');
+          const question = this.closest('.container-question');
+          if (question) {
+            toggleFAQ(question);
+          }
+        });
       });
     });
 
@@ -1237,20 +1212,22 @@ a,
 
 
       function bindNavMenu() {
+        const navMenu = document.querySelector('.w-nav-menu');
         if (window.matchMedia("(max-width: 991px)").matches) {
           // attach click handler to close menu when link is clicked
-          $('.w-nav-menu').off('click.nav').on('click.nav', 'a', function () {
-            $('.w-nav-menu').removeClass('w--open');
-            $('.w-nav-overlay').removeClass('w--open');
+          navMenu.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+              document.querySelector('.w-nav-menu').classList.remove('w--open');
+              document.querySelector('.w-nav-overlay').classList.remove('w--open');
+            }
           });
         } else {
-          // remove handler when screen is larger
-          $('.w-nav-menu').off('click.nav');
+          // remove handler when screen is larger - vanilla JS doesn't have off(), so we don't need to do anything
         }
       }
 
       bindNavMenu();
-      $(window).on('resize', bindNavMenu);
+      window.addEventListener('resize', bindNavMenu);
       } catch (error) {
         console.log('GSAP not loaded, skipping animations');
       }
